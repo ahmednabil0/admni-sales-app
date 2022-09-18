@@ -1,4 +1,4 @@
-import 'package:admin_new_app/veiw/home/home_veiw.dart';
+import 'veiw/home/home_veiw.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

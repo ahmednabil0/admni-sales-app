@@ -1,10 +1,10 @@
-import 'package:admin_new_app/veiw/components/public_widgets/back_ground.dart';
-import 'package:admin_new_app/veiw/components/public_widgets/bttons.dart';
-import 'package:admin_new_app/veiw/components/public_widgets/custom_text.dart';
-import 'package:admin_new_app/veiw/components/public_widgets/spaces.dart';
-import 'package:admin_new_app/veiw/components/txt_frm_feilds/txt_forms.dart';
-import 'package:admin_new_app/veiw/helper/consts/colors.dart';
-import 'package:admin_new_app/veiw_model/controller/auth/create_company_veiw_model.dart';
+import '../components/public_widgets/back_ground.dart';
+import '../components/public_widgets/bttons.dart';
+import '../components/public_widgets/custom_text.dart';
+import '../components/public_widgets/spaces.dart';
+import '../components/txt_frm_feilds/txt_forms.dart';
+import '../helper/consts/colors.dart';
+import '../../veiw_model/controller/auth/create_company_veiw_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

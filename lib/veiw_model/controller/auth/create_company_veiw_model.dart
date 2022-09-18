@@ -1,6 +1,5 @@
 import 'dart:math';
 
-import 'package:admin_new_app/model/company_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -38,14 +37,12 @@ class CreateCompanyVeiwModel extends GetxController {
   Future<void> createCompany() async {
     int i = createId();
 
-    await companyRef.doc().set(
-          CompanyModel(
-            name: companyNameCont.text,
-            createDate: date,
-            id: i,
-            logo: '',
-          ).toMap(),
-        );
+    await companyRef.doc().set({
+      "name": companyNameCont.text,
+      "createDate": date,
+      "id": i,
+      "logo": '',
+    });
     sharedpref!.setString('company', companyNameCont.text);
     sharedpref!.setInt('id', i);
   }
