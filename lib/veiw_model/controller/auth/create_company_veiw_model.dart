@@ -52,7 +52,8 @@ class CreateCompanyVeiwModel extends GetxController {
   @override
   void onInit() async {
     await Jiffy.locale(local);
-    craeteDateCont.text = Jiffy(date).format('yyyy/MM/dd');
+    craeteDateCont.text =
+        Jiffy(date).format('MM/dd/yyyy  يوم : EEE   الساعة :  h:mm a');
     super.onInit();
   }
 }

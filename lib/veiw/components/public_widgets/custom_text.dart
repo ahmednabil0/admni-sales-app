@@ -29,6 +29,50 @@ class AppText extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
+class AppText2 extends StatelessWidget {
+  AppText2({
+    required this.txt,
+    required this.color2,
+    required this.txt2,
+    required this.fw2,
+    required this.size,
+    required this.size2,
+    required this.fw,
+    required this.color,
+    Key? key,
+  }) : super(key: key);
+  String txt;
+  String txt2;
+  double size;
+  double size2;
+  FontWeight fw;
+  FontWeight fw2;
+  Color color;
+  Color color2;
+
+  @override
+  Widget build(BuildContext context) {
+    return Text.rich(
+      TextSpan(
+        text: txt,
+        style: TextStyle(
+            fontSize: size, color: color, fontFamily: 'Cairo', fontWeight: fw),
+        children: <TextSpan>[
+          TextSpan(
+              text: txt2,
+              style: TextStyle(
+                  fontSize: size2,
+                  color: color2,
+                  fontFamily: 'Cairo',
+                  fontWeight: fw2)),
+          // can add more TextSpans here...
+        ],
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
 class AppTextWidgtt extends StatelessWidget {
   AppTextWidgtt({
     required this.txt,
