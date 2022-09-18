@@ -31,8 +31,10 @@ class TxtFrmFeild {
     );
   }
 
-  static SizedBox buildnameTxtForm(
-      {required TextEditingController controller}) {
+  static SizedBox buildCompanyNameTxtForm(
+      {required TextEditingController controller,
+      required String hint,
+      required IconData icon}) {
     return SizedBox(
       width: Get.width * 0.9,
       child: TextFormField(
@@ -44,13 +46,20 @@ class TxtFrmFeild {
           return null;
         },
         decoration: InputDecoration(
-            hintText: '2'.tr,
+            errorStyle: TextStyle(
+              fontSize: Get.width * 0.03,
+              fontWeight: FontWeight.w500,
+              color: AppColors.fontColor,
+              fontFamily: 'Cairo',
+            ),
+            fillColor: AppColors.backgroundColor.withOpacity(0.7),
+            hintText: hint,
             hintStyle: TextStyle(
               fontSize: Get.width * 0.04,
               fontWeight: FontWeight.w700,
-              color: AppColors.primaryColor.withOpacity(0.5),
+              color: AppColors.fontColor.withOpacity(0.5),
             ),
-            prefixIcon: const Icon(Icons.home_repair_service_sharp),
+            prefixIcon: Icon(icon),
             prefixIconColor: AppColors.backgroundColor),
       ),
     );

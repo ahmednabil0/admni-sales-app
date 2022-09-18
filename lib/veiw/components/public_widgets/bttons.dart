@@ -35,7 +35,7 @@ class CustomButton extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.w700,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -73,7 +73,7 @@ class CustomButton4 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.055,
           fw: FontWeight.bold,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -105,7 +105,7 @@ class CustomButton2 extends StatelessWidget {
         txt: txt,
         size: Get.width * 0.05,
         fw: FontWeight.w700,
-        color: AppColors.backgroundColor,
+        color: AppColors.primaryColor,
       ),
     );
   }
@@ -127,22 +127,22 @@ class CustomButton3 extends StatelessWidget {
       onTap: ontap,
       child: Container(
         alignment: Alignment.center,
-        width: Get.width * 0.8,
-        height: Get.width * 0.12,
+        width: Get.width * 0.5,
+        height: Get.width * 0.135,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
-            Get.width * 0.02,
+            Get.width * 0.09,
           ),
           gradient: LinearGradient(colors: [
-            AppColors.seconrayColor,
-            AppColors.primaryColor.withOpacity(0.8),
+            Colors.white,
+            Colors.white54.withOpacity(0.8),
           ], begin: Alignment.centerLeft, end: Alignment.centerRight),
         ),
         child: AppText(
           txt: txt,
-          size: Get.width * 0.043,
-          fw: FontWeight.w700,
-          color: AppColors.backgroundColor,
+          size: Get.width * 0.046,
+          fw: FontWeight.w800,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -180,7 +180,7 @@ class CustomButton5 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.035,
           fw: FontWeight.w700,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -218,7 +218,7 @@ class CustomButton6 extends StatelessWidget {
           ),
           child: Icon(
             icon,
-            color: AppColors.backgroundColor,
+            color: AppColors.primaryColor,
           )),
     );
   }
@@ -255,7 +255,7 @@ class CustomButton16 extends StatelessWidget {
           ),
           child: Icon(
             icon,
-            color: AppColors.backgroundColor,
+            color: AppColors.primaryColor,
           )),
     );
   }
@@ -293,7 +293,7 @@ class CustomButton7 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.bold,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -329,7 +329,7 @@ class CustomButton8 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.04,
           fw: FontWeight.w900,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -368,7 +368,7 @@ class CustomButton9 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.bold,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );
@@ -403,7 +403,7 @@ class CustomButton22 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.bold,
-          color: AppColors.backgroundColor,
+          color: AppColors.primaryColor,
         ),
       ),
     );

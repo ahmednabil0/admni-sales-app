@@ -19,11 +19,11 @@ class AppText extends StatelessWidget {
     return Text(
       txt,
       style: TextStyle(
-          fontSize: size,
-          fontWeight: fw,
-          color: color,
-          decorationStyle: TextDecorationStyle.double,
-          background: Paint()..color = Colors.blue),
+        fontSize: size,
+        fontWeight: fw,
+        color: color,
+        fontFamily: 'Cairo',
+      ),
     );
   }
 }
