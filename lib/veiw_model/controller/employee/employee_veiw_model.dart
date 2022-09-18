@@ -8,6 +8,7 @@ class EmployeeVeiwModel extends GetxController {
   //start
   List<UserModel> _userData = [];
   Future<void> fetchUserData() async {
+    _userData.clear();
     _userData = await UserData().getUserData();
     update();
   }

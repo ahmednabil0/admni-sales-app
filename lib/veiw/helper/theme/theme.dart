@@ -18,18 +18,18 @@ ThemeData getThemeDate() {
       fillColor: AppColors.backgroundColor,
       filled: true,
       focusedBorder: OutlineInputBorder(
-        borderSide: const BorderSide(
+        borderSide: BorderSide(
           width: 1.5,
-          color: AppColors.primaryColor,
+          color: AppColors.fontColor.withOpacity(0.35),
         ),
         borderRadius: BorderRadius.all(
           Radius.circular(Get.width * 0.02),
         ),
       ),
       enabledBorder: OutlineInputBorder(
-        borderSide: const BorderSide(
+        borderSide: BorderSide(
           width: 1.5,
-          color: AppColors.primaryColor,
+          color: AppColors.seconrayColor.withOpacity(0.2),
         ),
         borderRadius: BorderRadius.all(
           Radius.circular(Get.width * 0.02),

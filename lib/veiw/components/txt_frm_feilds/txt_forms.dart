@@ -23,7 +23,6 @@ class TxtFrmFeild {
             hintStyle: TextStyle(
               fontSize: Get.width * 0.04,
               fontWeight: FontWeight.w700,
-              color: AppColors.primaryColor.withOpacity(0.5),
             ),
             prefixIcon: const Icon(Icons.person),
             prefixIconColor: AppColors.backgroundColor),
@@ -174,39 +173,28 @@ class TxtFrmFeild {
       {required TextEditingController controller}) {
     return SizedBox(
       width: Get.width * 0.35,
-      child: Column(
-        children: [
-          AppText(
-            txt: '47'.tr,
-            size: Get.width * 0.04,
-            fw: FontWeight.bold,
-            color: AppColors.primaryColor,
-          ),
-          SizedBox(
-            width: Get.width * 0.3,
-            child: TextFormField(
-              validator: (value) {
-                if (value == null || value.isEmpty) {
-                  return 'required*';
-                }
-                return null;
-              },
-              controller: controller,
-              keyboardType: TextInputType.number,
-              readOnly: true,
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                contentPadding: const EdgeInsets.symmetric(vertical: 0),
-                hintText: '30'.tr,
-                hintStyle: TextStyle(
-                  fontSize: Get.width * 0.04,
-                  fontWeight: FontWeight.w700,
-                  color: AppColors.primaryColor.withOpacity(0.5),
-                ),
-              ),
+      child: SizedBox(
+        width: Get.width * 0.3,
+        child: TextFormField(
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'required*';
+            }
+            return null;
+          },
+          controller: controller,
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(vertical: 0),
+            hintText: '30'.tr,
+            hintStyle: TextStyle(
+              fontSize: Get.width * 0.04,
+              fontWeight: FontWeight.w700,
+              color: AppColors.primaryColor.withOpacity(0.5),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
@@ -231,7 +219,6 @@ class TxtFrmFeild {
           hintStyle: TextStyle(
             fontSize: Get.width * 0.04,
             fontWeight: FontWeight.w700,
-            color: AppColors.primaryColor.withOpacity(0.5),
           ),
           suffixIcon: IconButton(
               onPressed: onPressed,

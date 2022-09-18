@@ -27,15 +27,15 @@ class CustomButton extends StatelessWidget {
             Get.width * 0.02,
           ),
           gradient: LinearGradient(colors: [
-            AppColors.primaryColor.withOpacity(0.35),
-            AppColors.primaryColor.withOpacity(0.28)
+            AppColors.primaryColor.withOpacity(0.85),
+            AppColors.primaryColor.withOpacity(0.58)
           ], begin: Alignment.centerLeft, end: Alignment.centerRight),
         ),
         child: AppText(
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.w700,
-          color: AppColors.primaryColor,
+          color: AppColors.backgroundColor,
         ),
       ),
     );
