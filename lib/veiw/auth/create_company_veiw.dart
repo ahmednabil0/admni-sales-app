@@ -1,12 +1,13 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../veiw_model/controller/auth/create_company_veiw_model.dart';
 import '../components/public_widgets/back_ground.dart';
 import '../components/public_widgets/bttons.dart';
 import '../components/public_widgets/custom_text.dart';
 import '../components/public_widgets/spaces.dart';
 import '../components/txt_frm_feilds/txt_forms.dart';
 import '../helper/consts/colors.dart';
-import '../../veiw_model/controller/auth/create_company_veiw_model.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CreateCompanyVeiw extends GetWidget<CreateCompanyVeiwModel> {
   CreateCompanyVeiw({super.key});
@@ -65,12 +66,13 @@ class CreateCompanyVeiw extends GetWidget<CreateCompanyVeiwModel> {
                 ),
                 buildHeightSpace(0.1),
                 CustomButton3(
-                    ontap: () async {
-                      if (_key.currentState!.validate()) {
-                        await controller.createCompany();
-                      }
-                    },
-                    txt: 'انشاء الشركة ')
+                  ontap: () async {
+                    if (_key.currentState!.validate()) {
+                      await controller.createCompany();
+                    }
+                  },
+                  txt: 'انشاء الشركة ',
+                )
               ],
             ),
           ),
