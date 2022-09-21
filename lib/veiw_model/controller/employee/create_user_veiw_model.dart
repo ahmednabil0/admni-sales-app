@@ -1,11 +1,12 @@
-import 'package:admin_new_app/main.dart';
-import 'package:admin_new_app/model/branches/branch_model.dart';
-import 'package:admin_new_app/model/branches/get_bransh_data.dart';
-import 'package:admin_new_app/veiw/home/home_veiw.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../main.dart';
+import '../../../model/branches/branch_model.dart';
+import '../../../model/branches/get_bransh_data.dart';
+import '../../../veiw/home/home_veiw.dart';
 
 class CreateUserVeiwModel extends GetxController {
   final TextEditingController emailCont = TextEditingController();

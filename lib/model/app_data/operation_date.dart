@@ -1,7 +1,9 @@
-import 'home_card_model.dart';
-import '../../veiw/home/employees/Employee_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../veiw/home/employees/Employee_veiw.dart';
+import '../../veiw/home/item/item_veiw.dart';
+import 'home_card_model.dart';
 
 class SalesAppData {
   static List<HomeCardModel> appDataList = [
@@ -20,5 +22,12 @@ class SalesAppData {
         },
         icon: Icons.person_add),
     HomeCardModel(type: '76'.tr, ontap: () {}, icon: Icons.person_search_sharp),
+    HomeCardModel(type: '90'.tr, ontap: () {}, icon: Icons.home_work),
+    HomeCardModel(
+        type: '91'.tr,
+        ontap: () {
+          Get.to(() => ItemVeiw());
+        },
+        icon: Icons.local_grocery_store_outlined),
   ];
 }

@@ -1,10 +1,10 @@
-import '../public_widgets/spaces.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../veiw_model/controller/employee/employee_veiw_model.dart';
 import '../../helper/consts/colors.dart';
 import '../public_widgets/custom_text.dart';
+import '../public_widgets/spaces.dart';
 
 GetBuilder<EmployeeVeiwModel> buildUserCard() {
   return GetBuilder<EmployeeVeiwModel>(

@@ -1,8 +1,8 @@
-import 'package:admin_new_app/veiw_model/controller/employee/create_user_veiw_model.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../veiw_model/controller/employee/create_user_veiw_model.dart';
 import '../../helper/consts/colors.dart';
 import '../public_widgets/custom_text.dart';
 

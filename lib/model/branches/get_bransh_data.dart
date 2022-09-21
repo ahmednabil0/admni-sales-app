@@ -1,4 +1,4 @@
-import 'package:admin_new_app/model/branches/branch_model.dart';
+import 'branch_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class BranshData {
