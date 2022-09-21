@@ -67,18 +67,24 @@ class TxtFrmFeild {
   static SizedBox buildQuntityTxtForm(
       {required TextEditingController controller}) {
     return SizedBox(
-      width: Get.width * 0.3,
-      height: Get.width * 0.08,
+      width: Get.width * 0.6,
       child: TextFormField(
         controller: controller,
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
+        readOnly: true,
         onChanged: (value) {
           controller.text = value;
         },
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return '5'.tr;
+          }
+          return null;
+        },
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.symmetric(vertical: 0),
-          hintText: '23'.tr,
+          hintText: 'image url',
           hintStyle: TextStyle(
             fontSize: Get.width * 0.04,
             fontWeight: FontWeight.w700,

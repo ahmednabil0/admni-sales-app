@@ -34,10 +34,12 @@ dependencies:
   dropdown_search: ^5.0.2
   firebase_auth: ^3.9.0
   firebase_core: ^1.22.0
+  firebase_storage: ^10.3.8
   flutter:
     sdk: flutter
   flutter_svg: ^1.1.5
   get: ^4.6.5
+  image_picker: ^0.8.5+3
   jiffy: ^5.0.0
   shared_preferences: ^2.0.15
 

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../veiw_model/controller/employee/create_user_veiw_model.dart';
+import '../../../veiw_model/controller/items/item_data_veiw_model.dart';
 import '../../helper/consts/colors.dart';
 import '../public_widgets/custom_text.dart';
 
@@ -109,5 +110,58 @@ SizedBox buildDrobDown({required CreateUserVeiwModel controller}) {
           ),
         ),
         selectedItem: controller.intailData2),
+  );
+}
+
+SizedBox buildDrobDownUniT({required ItemVeiwModel controller}) {
+  return SizedBox(
+    width: Get.width * 0.75,
+    child: DropdownSearch<String>(
+      autoValidateMode: AutovalidateMode.onUserInteraction,
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return '5'.tr;
+        }
+
+        return null;
+      },
+      clearButtonProps: const ClearButtonProps(
+          color: AppColors.primaryColor,
+          isVisible: true,
+          icon: Icon(Icons.clear_rounded)),
+      popupProps: PopupProps.menu(
+          showSearchBox: true,
+          showSelectedItems: true,
+          title: Padding(
+            padding: EdgeInsets.symmetric(horizontal: Get.width * 0.02),
+            child: AppText(
+              txt: 'اختار الفرع',
+              size: Get.width * 0.042,
+              fw: FontWeight.bold,
+              color: AppColors.primaryColor,
+            ),
+          ),
+          menuProps: const MenuProps(elevation: 25)),
+      items: controller.drobList.isEmpty ? [] : controller.drobList,
+      onChanged: (value) {
+        controller.oncganged(value);
+      },
+      enabled: true,
+      dropdownDecoratorProps: DropDownDecoratorProps(
+        dropdownSearchDecoration: InputDecoration(
+          errorStyle: TextStyle(
+            fontSize: Get.width * 0.035,
+            fontWeight: FontWeight.w800,
+          ),
+          prefixIcon: const Icon(
+            Icons.ac_unit_rounded,
+            color: AppColors.primaryColor,
+          ),
+          hintStyle: TextStyle(color: Colors.grey, fontSize: Get.width * 0.04),
+          hintText: '27'.tr,
+        ),
+      ),
+      selectedItem: controller.intailData,
+    ),
   );
 }

@@ -205,11 +205,11 @@ class CustomButton6 extends StatelessWidget {
       onTap: ontap,
       child: Container(
           alignment: Alignment.center,
-          width: Get.width * 0.12,
-          height: Get.width * 0.08,
+          width: Get.width * 0.2,
+          height: Get.width * 0.112,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(
-              Get.width * 0.02,
+              Get.width * 0.01,
             ),
             gradient: LinearGradient(colors: [
               AppColors.primaryColor.withOpacity(0.35),

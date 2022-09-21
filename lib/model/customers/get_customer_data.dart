@@ -1,21 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../main.dart';
-import 'item_model.dart';
+import 'customer_model.dart';
 
-class ItemData {
-  CollectionReference emRef = FirebaseFirestore.instance.collection('products');
-  List<ItemModel> itemList = [];
-  Future<List<ItemModel>> getItemData() async {
+class CustomerData {
+  CollectionReference emRef =
+      FirebaseFirestore.instance.collection('customers');
+  List<CustomerModel> customerList = [];
+  Future<List<CustomerModel>> getCustomerData() async {
     await emRef
         .where('companyName', isEqualTo: sharedpref!.getString('company'))
         .where('companyId', isEqualTo: sharedpref!.getInt('id'))
         .get()
         .then((value) {
       for (var i in value.docs) {
-        itemList.add(ItemModel.fromMap(i));
+        customerList.add(CustomerModel.fromMap(i));
       }
     });
-    return itemList;
+    return customerList;
   }
 }

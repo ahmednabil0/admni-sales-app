@@ -110,7 +110,7 @@ GetBuilder<ItemVeiwModel> buildItemCard() {
                                   buildWirthSpace(0.02),
                                   AppText2(
                                     txt2: controller.itemData[index].vat
-                                        .toStringAsFixed(1),
+                                        .toString(),
                                     txt: '${'26'.tr} : ',
                                     size: Get.width * 0.035,
                                     size2: Get.width * 0.035,
@@ -133,14 +133,8 @@ GetBuilder<ItemVeiwModel> buildItemCard() {
                             loadingBuilder: (BuildContext context, Widget child,
                                 ImageChunkEvent? loadingProgress) {
                               if (loadingProgress == null) return child;
-                              return Center(
-                                child: CircularProgressIndicator(
-                                  value: loadingProgress.expectedTotalBytes !=
-                                          null
-                                      ? loadingProgress.cumulativeBytesLoaded /
-                                          loadingProgress.expectedTotalBytes!
-                                      : null,
-                                ),
+                              return const Center(
+                                child: CircularProgressIndicator(),
                               );
                             },
                           )

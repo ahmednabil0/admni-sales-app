@@ -7,11 +7,12 @@ import '../../components/public_widgets/back_ground.dart';
 import '../../components/public_widgets/spaces.dart';
 import '../../components/widgets/item_card.dart';
 import '../../helper/consts/colors.dart';
+import 'add_item_veiw.dart';
 
 class ItemVeiw extends GetWidget<ItemVeiwModel> {
   ItemVeiw({super.key});
   @override
-  final controller = Get.put(ItemVeiwModel());
+  final controller = Get.put(ItemVeiwModel(), permanent: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,9 @@ class ItemVeiw extends GetWidget<ItemVeiwModel> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => AddItemVeiw());
+        },
         backgroundColor: AppColors.primaryColor,
         child: Icon(
           Icons.playlist_add_circle_outlined,
