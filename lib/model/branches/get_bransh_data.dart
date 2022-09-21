@@ -1,16 +1,17 @@
-import 'branch_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'branch_model.dart';
 
 class BranshData {
   CollectionReference brRef = FirebaseFirestore.instance.collection('branshes');
 
-  List<BranshModel> userList = [];
+  List<BranshModel> branshList = [];
   Future<List<BranshModel>> fetchBranshData() async {
     await brRef.get().then((value) {
       for (var i in value.docs) {
-        userList.add(BranshModel.fromMap(i));
+        branshList.add(BranshModel.fromMap(i));
       }
     });
-    return userList;
+    return branshList;
   }
 }
