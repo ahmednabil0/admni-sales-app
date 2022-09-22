@@ -1,4 +1,4 @@
-import 'package:admin_new_app/veiw/helper/consts/colors.dart';
+import '../../helper/consts/colors.dart';
 import 'package:flutter/material.dart';
 
 class IllegalCustomers extends StatelessWidget {

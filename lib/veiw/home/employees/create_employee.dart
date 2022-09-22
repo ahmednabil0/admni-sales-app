@@ -1,16 +1,16 @@
-import '../../components/public_widgets/app_bar.dart';
-import '../../components/public_widgets/bttons.dart';
-import '../../components/public_widgets/custom_text.dart';
-import '../../components/public_widgets/spaces.dart';
-import '../../components/txt_frm_feilds/txt_forms.dart';
-import '../../helper/consts/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../veiw_model/controller/employee/create_user_veiw_model.dart';
 import '../../components/dropdown/drop_down.dart';
+import '../../components/public_widgets/app_bar.dart';
 import '../../components/public_widgets/back_ground.dart';
+import '../../components/public_widgets/bttons.dart';
+import '../../components/public_widgets/custom_text.dart';
+import '../../components/public_widgets/spaces.dart';
+import '../../components/txt_frm_feilds/txt_forms.dart';
+import '../../helper/consts/colors.dart';
 
 class CreateUserVeiw extends GetWidget<CreateUserVeiwModel> {
   CreateUserVeiw({super.key});

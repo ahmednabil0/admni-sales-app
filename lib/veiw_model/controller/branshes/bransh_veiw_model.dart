@@ -1,8 +1,8 @@
 import 'dart:math';
 
-import 'package:admin_new_app/veiw/components/circlar_method.dart';
-import 'package:admin_new_app/veiw/components/public_widgets/bttons.dart';
-import 'package:admin_new_app/veiw/components/txt_frm_feilds/txt_forms.dart';
+import '../../../veiw/components/circlar_method.dart';
+import '../../../veiw/components/public_widgets/bttons.dart';
+import '../../../veiw/components/txt_frm_feilds/txt_forms.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

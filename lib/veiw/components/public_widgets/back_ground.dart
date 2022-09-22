@@ -29,3 +29,16 @@ Container createBackGroundHome({required Widget child}) {
       ),
       child: child);
 }
+
+Container createBackGround2({required Widget child}) {
+  return Container(
+      width: Get.width,
+      height: Get.height,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+            colors: [Colors.deepOrangeAccent, Colors.orange],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter),
+      ),
+      child: child);
+}

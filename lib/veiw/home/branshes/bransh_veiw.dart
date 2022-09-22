@@ -1,5 +1,5 @@
-import 'package:admin_new_app/veiw/components/widgets/bransh_card.dart';
-import 'package:admin_new_app/veiw_model/controller/branshes/bransh_veiw_model.dart';
+import '../../components/widgets/bransh_card.dart';
+import '../../../veiw_model/controller/branshes/bransh_veiw_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

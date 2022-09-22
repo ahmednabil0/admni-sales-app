@@ -1,5 +1,5 @@
-import 'package:admin_new_app/veiw/home/customers/customer_veiw.dart';
-import 'package:admin_new_app/veiw/home/customers/illegal_cust_veiw.dart';
+import 'customer_veiw.dart';
+import 'illegal_cust_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';

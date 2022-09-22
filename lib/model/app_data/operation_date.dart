@@ -1,4 +1,4 @@
-import 'package:admin_new_app/veiw/home/branshes/bransh_veiw.dart';
+import '../../veiw/home/branshes/bransh_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
