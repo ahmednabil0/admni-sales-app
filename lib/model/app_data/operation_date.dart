@@ -2,6 +2,7 @@ import 'package:admin_new_app/veiw/home/branshes/bransh_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../veiw/home/customers/bottom_nav_veiw.dart';
 import '../../veiw/home/employees/Employee_veiw.dart';
 import '../../veiw/home/item/item_veiw.dart';
 import 'home_card_model.dart';
@@ -22,7 +23,12 @@ class SalesAppData {
           Get.to(() => EmployeeVeiw());
         },
         icon: Icons.person_add),
-    HomeCardModel(type: '76'.tr, ontap: () {}, icon: Icons.person_search_sharp),
+    HomeCardModel(
+        type: '76'.tr,
+        ontap: () {
+          Get.to(() => const BottomNavBarCust());
+        },
+        icon: Icons.person_search_sharp),
     HomeCardModel(
         type: '90'.tr,
         ontap: () {

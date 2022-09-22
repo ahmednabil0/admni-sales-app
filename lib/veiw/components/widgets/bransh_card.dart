@@ -14,7 +14,7 @@ GetBuilder<BranshVeiwModel> buildBranshCard() {
             )
           : GridView.builder(
               padding: EdgeInsets.all(Get.width * 0.03),
-              physics: const BouncingScrollPhysics(),
+              // physics: const BouncingScrollPhysics(),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: Get.width * 0.05,
