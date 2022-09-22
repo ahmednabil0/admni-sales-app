@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../../main.dart';
 import '../../../model/branches/branch_model.dart';
 import '../../../model/branches/get_bransh_data.dart';
+import '../../../veiw/components/circlar_method.dart';
 import '../../../veiw/home/home_veiw.dart';
 
 class CreateUserVeiwModel extends GetxController {
@@ -97,13 +98,6 @@ class CreateUserVeiwModel extends GetxController {
   }
 
   //end
-
-  showCircular() {
-    Get.defaultDialog(
-        barrierDismissible: false,
-        title: '',
-        content: const LinearProgressIndicator());
-  }
 
   @override
   void onInit() async {

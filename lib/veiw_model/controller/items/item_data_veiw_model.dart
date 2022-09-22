@@ -11,6 +11,7 @@ import 'package:image_picker/image_picker.dart';
 import '../../../main.dart';
 import '../../../model/items/get_items_data.dart';
 import '../../../model/items/item_model.dart';
+import '../../../veiw/components/circlar_method.dart';
 import '../../../veiw/components/public_widgets/bttons.dart';
 import '../../../veiw/components/public_widgets/custom_text.dart';
 import '../../../veiw/helper/consts/colors.dart';
@@ -117,13 +118,6 @@ class ItemVeiwModel extends GetxController {
           ),
         ),
         enableDrag: true);
-  }
-
-  showCircular() {
-    Get.defaultDialog(
-        barrierDismissible: false,
-        title: '',
-        content: const LinearProgressIndicator());
   }
 
   String? url;

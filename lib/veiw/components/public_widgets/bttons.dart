@@ -293,7 +293,7 @@ class CustomButton7 extends StatelessWidget {
           txt: txt,
           size: Get.width * 0.05,
           fw: FontWeight.bold,
-          color: AppColors.primaryColor,
+          color: AppColors.backgroundColor,
         ),
       ),
     );
