@@ -286,7 +286,7 @@ class CustomButton7 extends StatelessWidget {
           ),
           gradient: LinearGradient(colors: [
             AppColors.primaryColor,
-            AppColors.primaryColor.withOpacity(0.78)
+            AppColors.seconrayColor.withOpacity(0.5)
           ], begin: Alignment.centerLeft, end: Alignment.centerRight),
         ),
         child: AppText(

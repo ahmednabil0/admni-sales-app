@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 import '../../../model/customers/customer_model.dart';
 import '../../../model/customers/get_customer_data.dart';
 
-class CustomerVeiwModel extends GetxController {
+class IllgCustomersVeiwModel extends GetxController {
   final TextEditingController queryCont = TextEditingController();
   // get customer data
   //start
   List<CustomerModel> _custData = [];
-  Future<void> fetchUserData(String q) async {
+  Future<void> fetchUserData() async {
     _custData.clear();
-    _custData = await CustomerData().getCustomerData(q);
+    _custData = await CustomerData().getIlegalCustomerData();
     update();
   }
 
@@ -19,7 +19,7 @@ class CustomerVeiwModel extends GetxController {
   //end
   @override
   void onInit() async {
-    await fetchUserData('');
+    await fetchUserData();
     super.onInit();
   }
 }

@@ -1,3 +1,4 @@
+import 'add_customer_veiw.dart';
 import 'customer_veiw.dart';
 import 'illegal_cust_veiw.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +16,11 @@ class BottomNavBarCust extends StatefulWidget {
 
 class _BottomNavBarCustState extends State<BottomNavBarCust> {
   int currenntIndex = 0;
-  List<Widget> bodyList = [Customersveiw(), const IllegalCustomers()];
+  List<Widget> bodyList = [
+    Customersveiw(),
+    const IllegalCustomers(),
+    AddCustomerVeiw()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +78,10 @@ class _BottomNavBarCustState extends State<BottomNavBarCust> {
             GButton(
               icon: Icons.person_remove,
               text: '95'.tr,
+            ),
+            GButton(
+              icon: Icons.group_add_sharp,
+              text: '96'.tr,
             ),
           ],
         ),
