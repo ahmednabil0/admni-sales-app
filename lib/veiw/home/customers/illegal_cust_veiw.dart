@@ -21,7 +21,7 @@ class IllegalCustomers extends GetWidget<IllgCustomersVeiwModel> {
             },
             child: Column(
               children: [
-                buildAppBar(txt: '76'.tr),
+                buildAppBar(txt: '95'.tr),
                 buildHeightSpace(0.02),
                 buildIllCustCard()
               ],

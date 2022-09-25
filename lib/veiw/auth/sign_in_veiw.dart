@@ -58,17 +58,25 @@ class SignInVeiw extends GetWidget<SignInCompanyVeiwModel> {
                           ),
                         ],
                       ),
-                      TxtFrmFeild.buildpasswordTxtForm(
-                          controller: passwordCont,
-                          obs: true,
-                          onPressed: () {}),
+                      GetBuilder<SignInCompanyVeiwModel>(
+                        builder: (controller) =>
+                            TxtFrmFeild.buildpasswordTxtForm(
+                                controller: passwordCont,
+                                obs: controller.opscur,
+                                onPressed: () {
+                                  controlller.isops();
+                                }),
+                      ),
                     ],
                   ),
                 ),
                 buildHeightSpace(0.1),
                 CustomButton3(
                   ontap: () async {
-                    if (_key.currentState!.validate()) {}
+                    if (_key.currentState!.validate()) {
+                      await controlller.signIn(
+                          userCont.text.trim(), passwordCont.text.trim());
+                    }
                   },
                   txt: 'تسجيل دخول',
                 ),
