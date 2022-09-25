@@ -77,6 +77,7 @@ SizedBox buildDrobDown({required CreateUserVeiwModel controller}) {
             isVisible: true,
             icon: Icon(Icons.clear_rounded)),
         popupProps: PopupProps.menu(
+            disabledItemFn: (item) => item.contains(' (Disabled)'),
             showSearchBox: true,
             showSelectedItems: true,
             title: Padding(

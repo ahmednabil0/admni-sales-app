@@ -1,3 +1,4 @@
+import 'package:admin_new_app/veiw/home/home_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,11 +27,15 @@ Row buildAppBar({
         fw: FontWeight.bold,
         color: AppColors.primaryColor,
       ),
-      Icon(
-        Icons.home_rounded,
-        color: AppColors.primaryColor,
-        size: Get.width * 0.08,
-      ),
+      IconButton(
+          onPressed: () {
+            Get.off(() => const HomePageVeiw());
+          },
+          icon: Icon(
+            Icons.home_rounded,
+            color: AppColors.primaryColor,
+            size: Get.width * 0.08,
+          )),
     ],
   );
 }

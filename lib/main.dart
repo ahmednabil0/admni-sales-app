@@ -1,3 +1,4 @@
+import 'package:admin_new_app/veiw/auth/sign_in_veiw.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,13 +27,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     MyLocalController controller = Get.put(MyLocalController());
     return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      locale: controller.intaillocal,
-      translations: MyLocal(),
-      title: 'Flutter Demo',
-      theme: getThemeDate(),
-      home: choosePage(),
-    );
+        debugShowCheckedModeBanner: false,
+        locale: controller.intaillocal,
+        translations: MyLocal(),
+        title: 'Flutter Demo',
+        theme: getThemeDate(),
+        home: SignInVeiw()
+
+        //  choosePage(),
+        );
   }
 
   // first route

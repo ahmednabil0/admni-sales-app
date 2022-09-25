@@ -27,9 +27,8 @@ class CustomerData {
     await emRef
         .where('companyName', isEqualTo: sharedpref!.getString('company'))
         .where('companyId', isEqualTo: sharedpref!.getInt('id'))
-        .where('rent', isEqualTo: 1)
         .where('rent_value', isGreaterThan: 0)
-        .orderBy('custName', descending: false)
+        .orderBy('rent_value', descending: false)
         .get()
         .then((value) {
       for (var i in value.docs) {
