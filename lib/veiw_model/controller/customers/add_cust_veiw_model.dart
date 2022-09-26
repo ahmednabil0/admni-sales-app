@@ -23,11 +23,18 @@ class AddCustVeiwModel extends GetxController {
     update();
   }
 
+  createRandom() {
+    String i = randomAlphaNumeric(20).toString();
+    return i;
+  }
+
   CollectionReference ref = FirebaseFirestore.instance.collection('customers');
+
   Future<void> uploadCustomers() async {
     showCircular();
-    await ref.doc().set(CustomerModel(
-          cid: randomBetween(10, 1000).toString(),
+    String d = createRandom();
+    await ref.doc(d).set(CustomerModel(
+          cid: d,
           companyId: sharedpref!.getInt('id')!,
           companyName: sharedpref!.getString('company')!,
           custName: nameCont.text,
