@@ -12,7 +12,39 @@ class HomePageVeiw extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          centerTitle: true,
+          leading: Icon(
+            Icons.menu_rounded,
+            color: AppColors.backgroundColor,
+            size: Get.width * 0.07,
+          ),
+          actions: [
+            Icon(
+              Icons.more_vert_rounded,
+              color: AppColors.backgroundColor,
+              size: Get.width * 0.07,
+            ),
+          ],
+          title: RichText(
+            text: TextSpan(
+              style: TextStyle(
+                  color: AppColors.backgroundColor,
+                  fontSize: Get.width * 0.05,
+                  fontWeight: FontWeight.w900),
+              children: const <TextSpan>[
+                TextSpan(text: 'Admin '),
+                TextSpan(
+                    text: 'Sales',
+                    style: TextStyle(
+                        color: AppColors.fontColor,
+                        fontWeight: FontWeight.w500)),
+                TextSpan(
+                  text: ' Rep',
+                )
+              ],
+            ),
+          )),
       body: createBackGroundHome(
         child: SafeArea(
           child: Column(
@@ -48,7 +80,9 @@ class HomePageVeiw extends StatelessWidget {
                           children: [
                             Icon(
                               SalesAppData.appDataList[i].icon,
-                              color: AppColors.primaryColor,
+                              color: i.isEven
+                                  ? AppColors.fontColor
+                                  : AppColors.primaryColor,
                               size: Get.width * 0.135,
                             ),
                             SizedBox(
@@ -56,9 +90,11 @@ class HomePageVeiw extends StatelessWidget {
                             ),
                             AppText(
                               txt: SalesAppData.appDataList[i].type,
-                              size: Get.width * 0.04,
+                              size: Get.width * 0.038,
                               fw: FontWeight.bold,
-                              color: AppColors.primaryColor.withOpacity(0.8),
+                              color: i.isOdd
+                                  ? AppColors.fontColor
+                                  : AppColors.primaryColor.withOpacity(0.8),
                             )
                           ],
                         ),

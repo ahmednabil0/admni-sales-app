@@ -1,5 +1,3 @@
-import 'package:admin_new_app/veiw/helper/consts/colors.dart';
-
 import '../../../veiw_model/controller/customers/customer_veiw_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
