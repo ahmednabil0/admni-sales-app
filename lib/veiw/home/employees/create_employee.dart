@@ -124,7 +124,7 @@ class CreateUserVeiw extends GetWidget<CreateUserVeiwModel> {
                       controller: controller,
                     ),
                   ),
-                  buildHeightSpace(0.04),
+                  buildHeightSpace(0.07),
                   CustomButton(
                     ontap: () async {
                       if (_key.currentState!.validate()) {
@@ -133,7 +133,7 @@ class CreateUserVeiw extends GetWidget<CreateUserVeiwModel> {
                     },
                     txt: '84'.tr,
                   ),
-                  buildHeightSpace(0.04),
+                  buildHeightSpace(0.08),
                 ],
               ),
             ),

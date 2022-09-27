@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:admin_new_app/veiw/components/public_widgets/app_bar.dart';
 import 'package:admin_new_app/veiw/components/public_widgets/back_ground.dart';
 import 'package:admin_new_app/veiw/components/public_widgets/bttons.dart';
@@ -7,6 +9,7 @@ import 'package:admin_new_app/veiw/helper/consts/colors.dart';
 import 'package:admin_new_app/veiw/home/home_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: must_be_immutable
@@ -79,8 +82,7 @@ class EmpDataVeiw extends StatelessWidget {
                   CustomButton6(
                     icon: Icons.whatsapp_rounded,
                     ontap: () async {
-                      await launchUrlString(
-                          "https://wa.me/${number}?text=user : $user , pass : $pass");
+                      await openwhatsapp(context);
                       Get.off(() => const HomePageVeiw());
                     },
                     txt: 'send to whats App',
@@ -92,5 +94,31 @@ class EmpDataVeiw extends StatelessWidget {
         ),
       )),
     );
+  }
+
+  openwhatsapp(context) async {
+    var whatsapp = number;
+    var whatsappurlAndroid = "whatsapp://send?phone=$whatsapp&text=$user:$pass";
+    var whatappurlIos = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
+    if (Platform.isIOS) {
+      // for iOS phone only
+      if (await canLaunchUrlString(whatappurlIos)) {
+        await launchUrlString(
+          whatappurlIos,
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: AppColors.seconrayColor,
+            content: const Text("whatsapp no installed")));
+      }
+    } else {
+      // android , web
+      if (await canLaunchUrlString(whatsappurlAndroid)) {
+        await launchUrlString(whatsappurlAndroid);
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("whatsapp no installed")));
+      }
+    }
   }
 }

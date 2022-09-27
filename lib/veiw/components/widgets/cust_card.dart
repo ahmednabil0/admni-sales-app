@@ -27,7 +27,7 @@ GetBuilder<CustomerVeiwModel> buildCustCard() {
                   horizontal: Get.width * 0.02,
                   vertical: Get.width * 0.045,
                 ),
-                height: Get.width * 0.332,
+                height: Get.width * 0.5,
                 decoration: BoxDecoration(
                   color: AppColors.backgroundColor,
                   boxShadow: [
@@ -42,6 +42,7 @@ GetBuilder<CustomerVeiwModel> buildCustCard() {
                   ),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     buildHeightSpace(0.02),
                     Row(
@@ -138,7 +139,7 @@ Expanded buildIllCustCard() {
                     horizontal: Get.width * 0.02,
                     vertical: Get.width * 0.03,
                   ),
-                  height: Get.width * 0.32,
+                  height: Get.width * 0.45,
                   decoration: BoxDecoration(
                     color: AppColors.backgroundColor,
                     boxShadow: [
@@ -153,6 +154,7 @@ Expanded buildIllCustCard() {
                     ),
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       buildHeightSpace(0.02),
                       Row(

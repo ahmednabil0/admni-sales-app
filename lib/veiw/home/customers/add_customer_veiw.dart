@@ -61,14 +61,14 @@ class AddCustomerVeiw extends GetWidget<AddCustVeiwModel> {
                             children: [
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: Get.width * 0.08),
+                                    horizontal: Get.width * 0.02),
                                 child: TxtFrmFeild.buildCustTxtForm(
                                     controller: controller.nameCont),
                               ),
                               buildHeightSpace(0.02),
                               Padding(
                                 padding: EdgeInsets.symmetric(
-                                    horizontal: Get.width * 0.08),
+                                    horizontal: Get.width * 0.02),
                                 child: TextFormField(
                                   controller: controller.phoneCont,
                                   validator: (value) {
@@ -122,7 +122,7 @@ class AddCustomerVeiw extends GetWidget<AddCustVeiwModel> {
                               await controller.uploadCustomers();
                             }
                           },
-                          txt: '96'.tr)
+                          txt: '96'.tr),
                     ],
                   ),
                 ),

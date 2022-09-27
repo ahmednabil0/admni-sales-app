@@ -231,6 +231,39 @@ class CustomButton6 extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
+class CustomButtonIcon extends StatelessWidget {
+  CustomButtonIcon({
+    required this.icon,
+    required this.ontap,
+    required this.txt,
+    Key? key,
+  }) : super(key: key);
+  String txt;
+  void Function() ontap;
+  IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: ontap,
+      child: Container(
+          alignment: Alignment.center,
+          width: Get.width * 0.2,
+          height: Get.width * 0.112,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                Get.width * 0.02,
+              ),
+              color: AppColors.backgroundColor),
+          child: Icon(
+            icon,
+            color: Colors.green,
+          )),
+    );
+  }
+}
+
+// ignore: must_be_immutable
 class CustomButton16 extends StatelessWidget {
   CustomButton16({
     required this.icon,

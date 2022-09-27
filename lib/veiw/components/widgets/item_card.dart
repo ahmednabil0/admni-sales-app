@@ -21,7 +21,7 @@ GetBuilder<ItemVeiwModel> buildItemCard() {
                     horizontal: Get.width * 0.02,
                     vertical: Get.width * 0.03,
                   ),
-                  height: Get.width * 0.4,
+                  height: Get.width * 0.5,
                   decoration: BoxDecoration(
                     color: AppColors.backgroundColor,
                     boxShadow: [
@@ -36,6 +36,7 @@ GetBuilder<ItemVeiwModel> buildItemCard() {
                     ),
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       AppText(
                         txt: controller.itemData[index].name,

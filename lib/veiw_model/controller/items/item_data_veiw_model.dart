@@ -89,7 +89,7 @@ class ItemVeiwModel extends GetxController {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    CustomButton6(
+                    CustomButtonIcon(
                       icon: Icons.photo,
                       txt: 'Gallery',
                       ontap: () async {
@@ -100,7 +100,7 @@ class ItemVeiwModel extends GetxController {
                         Get.back();
                       },
                     ),
-                    CustomButton6(
+                    CustomButtonIcon(
                       icon: Icons.photo_camera_rounded,
                       txt: 'Camera',
                       ontap: () async {

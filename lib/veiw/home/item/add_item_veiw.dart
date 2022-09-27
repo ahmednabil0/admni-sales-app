@@ -114,7 +114,7 @@ class AddItemVeiw extends GetWidget<ItemVeiwModel> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      CustomButton6(
+                      CustomButtonIcon(
                           icon: Icons.add_a_photo_rounded,
                           ontap: () {
                             controller.uploadImage();
