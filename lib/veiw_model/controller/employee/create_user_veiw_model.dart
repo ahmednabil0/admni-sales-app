@@ -7,6 +7,7 @@ import '../../../main.dart';
 import '../../../model/branches/branch_model.dart';
 import '../../../model/branches/get_bransh_data.dart';
 import '../../../veiw/components/circlar_method.dart';
+import '../../../veiw/home/employees/emp_data_veiw.dart';
 import '../../../veiw/home/home_veiw.dart';
 
 class CreateUserVeiwModel extends GetxController {
@@ -81,7 +82,13 @@ class CreateUserVeiwModel extends GetxController {
         });
         await Future.delayed(const Duration(milliseconds: 250));
         Get.back();
-        Get.off(() => const HomePageVeiw());
+        Get.off(
+          () => EmpDataVeiw(
+            number: phoneCont.text.trim(),
+            user: emailCont.text.trim(),
+            pass: passwordCont.text.trim(),
+          ),
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {

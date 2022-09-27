@@ -205,20 +205,26 @@ class CustomButton6 extends StatelessWidget {
       onTap: ontap,
       child: Container(
           alignment: Alignment.center,
-          width: Get.width * 0.2,
+          width: Get.width * 0.6,
           height: Get.width * 0.112,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(
-              Get.width * 0.01,
-            ),
-            gradient: LinearGradient(colors: [
-              AppColors.primaryColor.withOpacity(0.35),
-              AppColors.primaryColor.withOpacity(0.28)
-            ], begin: Alignment.centerLeft, end: Alignment.centerRight),
-          ),
-          child: Icon(
-            icon,
-            color: AppColors.primaryColor,
+              borderRadius: BorderRadius.circular(
+                Get.width * 0.02,
+              ),
+              color: AppColors.backgroundColor),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              AppText(
+                  txt: txt,
+                  size: Get.width * 0.045,
+                  fw: FontWeight.bold,
+                  color: AppColors.seconrayColor),
+              Icon(
+                icon,
+                color: Colors.green,
+              ),
+            ],
           )),
     );
   }
