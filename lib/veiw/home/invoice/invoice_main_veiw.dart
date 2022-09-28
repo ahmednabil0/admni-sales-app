@@ -2,6 +2,7 @@ import 'package:admin_new_app/veiw/components/public_widgets/app_bar.dart';
 import 'package:admin_new_app/veiw/components/public_widgets/back_ground.dart';
 import 'package:admin_new_app/veiw/components/public_widgets/bttons.dart';
 import 'package:admin_new_app/veiw/components/public_widgets/spaces.dart';
+import 'package:admin_new_app/veiw/home/invoice/craete_invoice_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -41,7 +42,9 @@ class InvoiceMainVeiw extends StatelessWidget {
                 0.03,
               ),
               CustomButton(
-                ontap: () {},
+                ontap: () {
+                  Get.to(() => CreateInvoiceVeiw());
+                },
                 txt: '99'.tr,
               ),
               buildHeightSpace(

@@ -1,3 +1,4 @@
+import 'package:admin_new_app/veiw_model/controller/invoice/create_invoice_veiw_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -195,6 +196,63 @@ class TxtFrmFeild {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  static GetBuilder<CreateInvoiceVeiwModel> buildQntityTxtForm(
+      {required TextEditingController controll, required int i}) {
+    return GetBuilder<CreateInvoiceVeiwModel>(
+      builder: (controller) => SizedBox(
+        width: Get.width * 0.3,
+        height: Get.width * 0.08,
+        child: TextFormField(
+          controller: controll,
+          keyboardType: TextInputType.number,
+          textAlign: TextAlign.center,
+          onChanged: (value) {
+            controller.selectedList[i].quntity = int.parse(value);
+          },
+          decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(vertical: 0),
+            hintText: '23'.tr,
+            hintStyle: TextStyle(
+              fontSize: Get.width * 0.04,
+              fontWeight: FontWeight.w700,
+              color: AppColors.primaryColor.withOpacity(0.5),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  static SizedBox buildQTxtForm({required TextEditingController controller}) {
+    return SizedBox(
+      width: Get.width * 0.15,
+      height: Get.width * 0.09,
+      child: TextFormField(
+        inputFormatters: [
+          FilteringTextInputFormatter.allow(
+            RegExp(
+              r'(^\d*\.?\d*)',
+            ),
+          )
+        ],
+        controller: controller,
+        readOnly: false,
+        style: TextStyle(fontSize: Get.width * 0.03),
+        keyboardType: TextInputType.number,
+        textAlign: TextAlign.center,
+        decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(vertical: 0),
+          hintText: '30'.tr,
+          hintStyle: TextStyle(
+            fontSize: Get.width * 0.04,
+            fontWeight: FontWeight.w700,
+            color: AppColors.primaryColor.withOpacity(0.5),
+          ),
+        ),
       ),
     );
   }

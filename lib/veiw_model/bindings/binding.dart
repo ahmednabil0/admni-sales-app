@@ -1,3 +1,5 @@
+import 'package:admin_new_app/veiw_model/controller/invoice/create_invoice_veiw_model.dart';
+import 'package:admin_new_app/veiw_model/controller/invoice/invoices_veiw_model.dart';
 import 'package:get/get.dart';
 
 import '../controller/auth/create_company_veiw_model.dart';
@@ -20,5 +22,7 @@ class Binding extends Bindings {
     Get.lazyPut(() => EmployeeVeiwModel());
     Get.lazyPut(() => BranshVeiwModel());
     Get.lazyPut(() => SignInCompanyVeiwModel());
+    Get.lazyPut(() => InvoicesVeiwModel());
+    Get.lazyPut(() => CreateInvoiceVeiwModel());
   }
 }

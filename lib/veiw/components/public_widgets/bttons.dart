@@ -264,6 +264,39 @@ class CustomButtonIcon extends StatelessWidget {
 }
 
 // ignore: must_be_immutable
+class CustomButtonIcon2 extends StatelessWidget {
+  CustomButtonIcon2({
+    required this.icon,
+    required this.ontap,
+    required this.txt,
+    Key? key,
+  }) : super(key: key);
+  String txt;
+  void Function() ontap;
+  IconData icon;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+          alignment: Alignment.center,
+          width: Get.width * 0.1,
+          height: Get.width * 0.08,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(
+                Get.width * 0.01,
+              ),
+              color: AppColors.backgroundColor),
+          child: Icon(
+            icon,
+            color: Colors.green,
+          )),
+    );
+  }
+}
+
+// ignore: must_be_immutable
 class CustomButton16 extends StatelessWidget {
   CustomButton16({
     required this.icon,

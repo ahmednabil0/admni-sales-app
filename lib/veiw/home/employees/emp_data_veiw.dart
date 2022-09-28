@@ -9,7 +9,6 @@ import 'package:admin_new_app/veiw/helper/consts/colors.dart';
 import 'package:admin_new_app/veiw/home/home_veiw.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
 // ignore: must_be_immutable

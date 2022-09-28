@@ -8,7 +8,6 @@ import '../../../model/branches/branch_model.dart';
 import '../../../model/branches/get_bransh_data.dart';
 import '../../../veiw/components/circlar_method.dart';
 import '../../../veiw/home/employees/emp_data_veiw.dart';
-import '../../../veiw/home/home_veiw.dart';
 
 class CreateUserVeiwModel extends GetxController {
   final TextEditingController emailCont = TextEditingController();
