@@ -16,6 +16,7 @@ class SignInCompanyVeiwModel extends GetxController {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   CollectionReference ref = FirebaseFirestore.instance.collection('users');
   Future<void> signIn(String email, String password) async {
+    await firebaseAuth.signOut();
     showCircular();
     try {
       // ignore: unused_local_variable
@@ -34,11 +35,13 @@ class SignInCompanyVeiwModel extends GetxController {
             sharedpref!.setString('company', value.docs[0]['companyName']);
             sharedpref!.setInt('id', value.docs[0]['companyId']);
             Get.off(() => const HomePageVeiw());
+          } else {
+            Get.snackbar('sorry', 'dont have permission to enter');
+            Get.back();
           }
         });
       }
       // ignore: unnecessary_null_comparison
-
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         Get.snackbar('erreo', 'user not found');
@@ -50,5 +53,4 @@ class SignInCompanyVeiwModel extends GetxController {
     }
   }
   //   // ignore: unnecessary_null_comparison
-
 }
