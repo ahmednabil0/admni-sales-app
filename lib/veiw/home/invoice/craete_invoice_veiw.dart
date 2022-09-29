@@ -25,7 +25,7 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
               buildAppBar(txt: '99'.tr),
               buildHeightSpace(0.02),
               buildSarchItems(controller.txtCont),
-              buildHeightSpace(0.01),
+              buildHeightSpace(0.03),
               Expanded(
                 child: GetBuilder<CreateInvoiceVeiwModel>(
                   builder: (controller) => Stack(
@@ -50,15 +50,15 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                       .toString();
                                   return Padding(
                                     padding: EdgeInsets.symmetric(
-                                        horizontal: Get.width * 0.01,
+                                        horizontal: Get.width * 0.025,
                                         vertical: Get.width * 0.005),
                                     child: Container(
                                       height: Get.width * 0.3,
                                       decoration: BoxDecoration(
-                                        color: AppColors.primaryColor
-                                            .withOpacity(0.8),
+                                        color: AppColors.fontColor
+                                            .withOpacity(0.2),
                                         borderRadius: BorderRadius.circular(
-                                          Get.width * 0.04,
+                                          Get.width * 0.045,
                                         ),
                                       ),
                                       child: Row(
