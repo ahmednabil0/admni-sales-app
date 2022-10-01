@@ -51,7 +51,7 @@ class CreateCompanyVeiwModel extends GetxController {
   String local = sharedpref!.getString('lang') == 'en' ? 'en' : 'ar';
   @override
   void onInit() async {
-    await Jiffy.locale(local);
+    // await Jiffy.locale(local);
     craeteDateCont.text =
         Jiffy(date).format('MM/dd/yyyy  يوم : EEE   الساعة :  h:mm a');
     super.onInit();

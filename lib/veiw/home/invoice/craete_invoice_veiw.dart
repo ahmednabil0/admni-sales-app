@@ -55,19 +55,47 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                     child: Container(
                                       height: Get.width * 0.3,
                                       decoration: BoxDecoration(
-                                        color: AppColors.fontColor
-                                            .withOpacity(0.2),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            blurRadius: 5,
+                                            offset: const Offset(2, 2),
+                                            color:
+                                                AppColors.fontColor.withOpacity(
+                                              0.5,
+                                            ),
+                                          )
+                                        ],
+                                        color: AppColors.backgroundColor,
                                         borderRadius: BorderRadius.circular(
                                           Get.width * 0.045,
                                         ),
                                       ),
                                       child: Row(
                                         children: [
-                                          Image.network(
-                                            controller.selectedList[index].url,
+                                          Container(
+                                            width: Get.width * 0.3,
                                             height: Get.width * 0.3,
-                                            width: Get.width * 0.28,
-                                            fit: BoxFit.cover,
+                                            decoration: BoxDecoration(
+                                              color: AppColors.backgroundColor,
+                                              image: DecorationImage(
+                                                  image: NetworkImage(
+                                                    controller
+                                                        .selectedList[index]
+                                                        .url,
+                                                  ),
+                                                  fit: BoxFit.fill),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                Get.width * 0.045,
+                                              ),
+                                            ),
+                                            // child: Image.network(
+                                            //   controller
+                                            //       .selectedList[index].url,
+                                            //   height: Get.width * 0.3,
+                                            //   width: Get.width * 0.28,
+                                            //   fit: BoxFit.cover,
+                                            // ),
                                           ),
                                           buildWirthSpace(0.07),
                                           Column(
@@ -95,8 +123,7 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                     .toString(),
                                                 size: Get.width * 0.04,
                                                 fw: FontWeight.w800,
-                                                color:
-                                                    AppColors.backgroundColor,
+                                                color: AppColors.seconrayColor,
                                               ),
                                               Row(
                                                 mainAxisAlignment:

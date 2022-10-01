@@ -290,7 +290,7 @@ class CustomButtonIcon2 extends StatelessWidget {
               color: AppColors.backgroundColor),
           child: Icon(
             icon,
-            color: Colors.green,
+            color: AppColors.primaryColor,
           )),
     );
   }
