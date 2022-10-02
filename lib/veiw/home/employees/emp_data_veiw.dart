@@ -119,6 +119,7 @@ class EmpDataVeiw extends StatelessWidget {
       if (await canLaunchUrlString(whatsappurlAndroid)) {
         await launchUrlString(whatsappurlAndroid);
       } else {
+        // ignore: avoid_print
         print(msg);
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("whatsapp no installed")));
