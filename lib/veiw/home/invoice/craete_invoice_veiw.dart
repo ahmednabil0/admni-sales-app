@@ -7,6 +7,7 @@ import 'package:admin_new_app/veiw/components/txt_frm_feilds/txt_forms.dart';
 import 'package:admin_new_app/veiw/components/widgets/search_cust.dart';
 import 'package:admin_new_app/veiw/helper/consts/colors.dart';
 import 'package:admin_new_app/veiw_model/controller/invoice/create_invoice_veiw_model.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -131,7 +132,14 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                 children: [
                                                   CustomButtonIcon2(
                                                     icon: Icons.add,
-                                                    ontap: () {
+                                                    ontap: () async {
+                                                      await AudioPlayer().play(
+                                                        AssetSource(
+                                                          'audio/click.mp3',
+                                                        ),
+                                                      );
+                                                      await AudioPlayer()
+                                                          .stop();
                                                       controller.add(index);
                                                     },
                                                     txt: 'add',
@@ -144,7 +152,14 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                   buildWirthSpace(0.01),
                                                   CustomButtonIcon2(
                                                     icon: Icons.remove,
-                                                    ontap: () {
+                                                    ontap: () async {
+                                                      await AudioPlayer().play(
+                                                        AssetSource(
+                                                          'audio/click.mp3',
+                                                        ),
+                                                      );
+                                                      await AudioPlayer()
+                                                          .stop();
                                                       controller.sub(index);
                                                     },
                                                     txt: 'add',
@@ -175,7 +190,13 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                         borderRadius: BorderRadius.circular(
                                             Get.width * 0.04)),
                                     child: ListTile(
-                                      onTap: () {
+                                      onTap: () async {
+                                        await AudioPlayer().play(
+                                          AssetSource(
+                                            'audio/beeb.mp3',
+                                          ),
+                                        );
+                                        await AudioPlayer().stop();
                                         controller.addToSL(
                                             controller.itemData[index]);
                                         controller.itemData.clear();
