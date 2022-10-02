@@ -165,22 +165,22 @@ class CustomButton5 extends StatelessWidget {
       onTap: ontap,
       child: Container(
         alignment: Alignment.center,
-        width: Get.width * 0.15,
+        width: Get.width * 0.26,
         height: Get.width * 0.1,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(
             Get.width * 0.02,
           ),
           gradient: LinearGradient(colors: [
-            AppColors.primaryColor.withOpacity(0.35),
-            AppColors.primaryColor.withOpacity(0.28)
+            AppColors.primaryColor,
+            AppColors.primaryColor.withOpacity(0.78)
           ], begin: Alignment.centerLeft, end: Alignment.centerRight),
         ),
         child: AppText(
           txt: txt,
-          size: Get.width * 0.035,
+          size: Get.width * 0.045,
           fw: FontWeight.w700,
-          color: AppColors.primaryColor,
+          color: AppColors.backgroundColor,
         ),
       ),
     );

@@ -22,6 +22,8 @@ class CreateInvoiceVeiwModel extends GetxController {
     if (!selectedList.contains(model)) {
       selectedList.add(model);
     }
+    calTotal();
+
     txtCont.text == '';
     update();
   }
@@ -32,12 +34,15 @@ class CreateInvoiceVeiwModel extends GetxController {
 
   void add(int i) {
     selectedList[i].quntity++;
+    calTotal();
+
     update();
   }
 
   void sub(int i) {
     if (selectedList[i].quntity > 1) {
       selectedList[i].quntity--;
+      calTotal();
     }
     update();
   }
@@ -49,11 +54,11 @@ class CreateInvoiceVeiwModel extends GetxController {
       for (ItemModel element in selectedList) {
         total = total + (element.price * element.quntity);
       }
-      TextEditingController deliveryCont = TextEditingController();
-      TextEditingController vatCont = TextEditingController();
-      total = total +
-          double.parse(deliveryCont.text) +
-          (double.parse(vatCont.text) * total);
+      // TextEditingController deliveryCont = TextEditingController();
+      // TextEditingController vatCont = TextEditingController();
+      // total = total +
+      //     double.parse(deliveryCont.text) +
+      //     (double.parse(vatCont.text) * total);
     }
     update();
   }

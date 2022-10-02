@@ -52,17 +52,17 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                   return Padding(
                                     padding: EdgeInsets.symmetric(
                                         horizontal: Get.width * 0.025,
-                                        vertical: Get.width * 0.005),
+                                        vertical: Get.width * 0.009),
                                     child: Container(
                                       height: Get.width * 0.3,
                                       decoration: BoxDecoration(
                                         boxShadow: [
                                           BoxShadow(
-                                            blurRadius: 5,
+                                            blurRadius: 3,
                                             offset: const Offset(2, 2),
                                             color:
                                                 AppColors.fontColor.withOpacity(
-                                              0.5,
+                                              0.25,
                                             ),
                                           )
                                         ],
@@ -138,8 +138,8 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                           'audio/click.mp3',
                                                         ),
                                                       );
-                                                      await AudioPlayer()
-                                                          .stop();
+                                                      // await AudioPlayer()
+                                                      //     .stop();
                                                       controller.add(index);
                                                     },
                                                     txt: 'add',
@@ -158,8 +158,8 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                           'audio/click.mp3',
                                                         ),
                                                       );
-                                                      await AudioPlayer()
-                                                          .stop();
+                                                      // await AudioPlayer()
+                                                      //     .stop();
                                                       controller.sub(index);
                                                     },
                                                     txt: 'add',
@@ -196,7 +196,7 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                             'audio/beeb.mp3',
                                           ),
                                         );
-                                        await AudioPlayer().stop();
+                                        // await AudioPlayer().stop();
                                         controller.addToSL(
                                             controller.itemData[index]);
                                         controller.itemData.clear();
@@ -222,6 +222,37 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                             ),
                     ],
                   ),
+                ),
+              ),
+              Container(
+                height: Get.width * 0.25,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: AppColors.backgroundColor,
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 5,
+                        color: AppColors.fontColor.withOpacity(0.1),
+                        offset: const Offset(0, -2))
+                  ],
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(Get.width * 0.09),
+                    topRight: Radius.circular(Get.width * 0.09),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CustomButton5(ontap: () {}, txt: '55'.tr),
+                    GetBuilder<CreateInvoiceVeiwModel>(
+                      builder: (controller) => AppText(
+                        txt: controller.total.toStringAsFixed(2),
+                        size: Get.width * 0.056,
+                        fw: FontWeight.bold,
+                        color: AppColors.primaryColor,
+                      ),
+                    ),
+                  ],
                 ),
               )
             ],
