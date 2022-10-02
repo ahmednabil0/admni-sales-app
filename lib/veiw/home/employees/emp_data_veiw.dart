@@ -100,9 +100,9 @@ class EmpDataVeiw extends StatelessWidget {
   openwhatsapp(context) async {
     var whatsapp = number;
     String msg =
-        'hi, $name welcome to our staff. \n this is your login data to our app. /n username:$user. /n password:$pass. /n here is the app : https://www.mediafire.com/file/lkih0w915dnef0g/app-release.apk/file';
+        ' hi, $name welcome to our staff \n this is your login data to our app \n username:$user \n password:$pass \n here is you copy from the app \n https://www.mediafire.com/file/lkih0w915dnef0g/app-release.apk/file';
     var whatsappurlAndroid = "whatsapp://send?phone=$whatsapp&text=$msg";
-    var whatappurlIos = "https://wa.me/$whatsapp?text=${Uri.parse(msg)}";
+    var whatappurlIos = "https://wa.me/$whatsapp?text=$msg";
     if (Platform.isIOS) {
       // for iOS phone only
       if (await canLaunchUrlString(whatappurlIos)) {
@@ -119,6 +119,7 @@ class EmpDataVeiw extends StatelessWidget {
       if (await canLaunchUrlString(whatsappurlAndroid)) {
         await launchUrlString(whatsappurlAndroid);
       } else {
+        print(msg);
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text("whatsapp no installed")));
       }
