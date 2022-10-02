@@ -17,11 +17,13 @@ class EmpDataVeiw extends StatelessWidget {
       {required this.number,
       required this.user,
       required this.pass,
+      required this.name,
       super.key});
   TextEditingController userCont = TextEditingController();
   String user;
   String pass;
   String number;
+  String name;
 
   @override
   Widget build(BuildContext context) {
@@ -97,8 +99,10 @@ class EmpDataVeiw extends StatelessWidget {
 
   openwhatsapp(context) async {
     var whatsapp = number;
-    var whatsappurlAndroid = "whatsapp://send?phone=$whatsapp&text=$user:$pass";
-    var whatappurlIos = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
+    String msg =
+        'hi, $name welcome to our staff. \n this is your login data to our app. /n username:$user. /n password:$pass. /n here is the app : https://www.mediafire.com/file/lkih0w915dnef0g/app-release.apk/file';
+    var whatsappurlAndroid = "whatsapp://send?phone=$whatsapp&text=$msg";
+    var whatappurlIos = "https://wa.me/$whatsapp?text=${Uri.parse(msg)}";
     if (Platform.isIOS) {
       // for iOS phone only
       if (await canLaunchUrlString(whatappurlIos)) {

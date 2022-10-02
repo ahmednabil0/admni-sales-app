@@ -86,6 +86,7 @@ class CreateUserVeiwModel extends GetxController {
             number: phoneCont.text.trim(),
             user: emailCont.text.trim(),
             pass: passwordCont.text.trim(),
+            name: nameCont.text.trim(),
           ),
         );
       }
