@@ -16,6 +16,8 @@ import '../../../veiw/helper/consts/colors.dart';
 class CreateInvoiceVeiwModel extends GetxController {
   TextEditingController txtCont = TextEditingController();
   TextEditingController txtCCont = TextEditingController();
+  TextEditingController payedCont = TextEditingController();
+  TextEditingController rentCont = TextEditingController();
   // get item data
   //start
   List<ItemModel> _itemData = [];
@@ -101,96 +103,13 @@ class CreateInvoiceVeiwModel extends GetxController {
 
   // bottom sheet
   //start
-  void shoeBottomSheet() {
-    Get.bottomSheet(
-      Container(
-          height: Get.width * 2,
-          decoration: BoxDecoration(
-            color: AppColors.backgroundColor,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(Get.width * 0.1),
-              topRight: Radius.circular(Get.width * 0.1),
-            ),
-          ),
-          child: Column(
-            children: [
-              Divider(
-                thickness: 4,
-                height: Get.width * 0.05,
-                color: AppColors.fontColor.withOpacity(0.3),
-                endIndent: Get.width * 0.4,
-                indent: Get.width * 0.4,
-              ),
-              buildHeightSpace(0.02),
-              GetBuilder<CreateInvoiceVeiwModel>(
-                  builder: (controller) =>
-                      buildSarchCustomersC(controller.txtCCont)),
-              Expanded(
-                  child: Stack(
-                children: [
-                  GetBuilder<CreateInvoiceVeiwModel>(
-                    builder: (controller) => controller.custData.isEmpty
-                        ? const SizedBox()
-                        : ListView.builder(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: Get.width * 0.08,
-                                vertical: Get.width * 0.01),
-                            itemCount: controller.custData.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              return Padding(
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: Get.width * 0.02,
-                                    vertical: Get.width * 0.005),
-                                child: ListTile(
-                                    onTap: () async {
-                                      await AudioPlayer().play(
-                                        AssetSource(
-                                          'audio/beeb.mp3',
-                                        ),
-                                      );
-                                      // await AudioPlayer().stop();
-                                      controller
-                                          .addToCL(controller.custData[index]);
-                                      controller.custData.clear();
-                                    },
-                                    selectedTileColor: AppColors.seconrayColor,
-                                    hoverColor: AppColors.primaryColor,
-                                    title: AppText(
-                                      txt:
-                                          '${controller.custData[index].custName}       ${controller.custData[index].phone}',
-                                      size: Get.width * 0.03,
-                                      fw: FontWeight.w800,
-                                      color: AppColors.fontColor,
-                                    ),
-                                    leading: const Icon(Icons.person)),
-                              );
-                            },
-                          ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.only(top: Get.width * 0.04),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        TxtFrmFeild.buildPayedTxtForm(
-                            controller: TextEditingController()),
-                        TxtFrmFeild.buildrentTxtForm(
-                            controller: TextEditingController())
-                      ],
-                    ),
-                  )
-                ],
-              ))
-            ],
-          )),
-      barrierColor: Colors.black.withOpacity(0.2),
-      isDismissible: true,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(35),
-      ),
-      backgroundColor: Colors.transparent,
-      enableDrag: true,
-    );
+  void shoeBottomSheet() {}
+
+  @override
+  void onInit() {
+    rentCont.text = '0.0';
+    payedCont.text = '0.0';
+    super.onInit();
   }
   //end
 }

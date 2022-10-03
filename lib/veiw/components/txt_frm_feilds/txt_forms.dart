@@ -159,7 +159,8 @@ class TxtFrmFeild {
   }
 
   static SizedBox buildPayedTxtForm(
-      {required TextEditingController controller}) {
+      {required TextEditingController cont,
+      required CreateInvoiceVeiwModel controller}) {
     return SizedBox(
       width: Get.width * 0.35,
       child: Column(
@@ -181,7 +182,14 @@ class TxtFrmFeild {
                   ),
                 )
               ],
-              controller: controller,
+              controller: cont,
+              onChanged: (value) {
+                if (controller.total > 0) {
+                  controller.rentCont.text = (controller.total -
+                          double.parse(controller.payedCont.text))
+                      .toStringAsFixed(2);
+                }
+              },
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
