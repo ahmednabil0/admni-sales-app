@@ -80,7 +80,7 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                             );
                             Get.bottomSheet(
                               Container(
-                                  height: Get.width * 2,
+                                  height: Get.width * 0.75,
                                   decoration: BoxDecoration(
                                     color: AppColors.backgroundColor,
                                     borderRadius: BorderRadius.only(
@@ -107,6 +107,46 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                       Expanded(
                                           child: Stack(
                                         children: [
+                                          Container(
+                                            margin: EdgeInsets.only(
+                                                top: Get.width * 0.19),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                TxtFrmFeild.buildPayedTxtForm(
+                                                    cont: controller.payedCont,
+                                                    controller: controller),
+                                                TxtFrmFeild.buildrentTxtForm(
+                                                    controller:
+                                                        controller.rentCont)
+                                              ],
+                                            ),
+                                          ),
+                                          Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.only(
+                                                top: Get.width * 0.02),
+                                            child: TxtFrmFeild.buildvatTxtForm(
+                                                cont: controller,
+                                                controller: controller.vatCont),
+                                          ),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              const Spacer(),
+                                              Center(
+                                                child: CustomButton(
+                                                  ontap: () {
+                                                    controller.uploadInvoice();
+                                                  },
+                                                  txt: '28'.tr,
+                                                ),
+                                              ),
+                                              buildHeightSpace(0.04)
+                                            ],
+                                          ),
                                           GetBuilder<CreateInvoiceVeiwModel>(
                                             builder: (controller) => controller
                                                     .custData.isEmpty
@@ -134,60 +174,52 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                                                                 vertical:
                                                                     Get.width *
                                                                         0.005),
-                                                        child: ListTile(
-                                                            onTap: () async {
-                                                              await AudioPlayer()
-                                                                  .play(
-                                                                AssetSource(
-                                                                  'audio/beeb.mp3',
-                                                                ),
-                                                              );
-                                                              // await AudioPlayer().stop();
-                                                              controller.addToCL(
-                                                                  controller
-                                                                          .custData[
-                                                                      index]);
-                                                              controller
-                                                                  .custData
-                                                                  .clear();
-                                                            },
-                                                            selectedTileColor:
-                                                                AppColors
-                                                                    .seconrayColor,
-                                                            hoverColor: AppColors
-                                                                .primaryColor,
-                                                            title: AppText(
-                                                              txt:
-                                                                  '${controller.custData[index].custName}       ${controller.custData[index].phone}',
-                                                              size: Get.width *
-                                                                  0.03,
-                                                              fw: FontWeight
-                                                                  .w800,
-                                                              color: AppColors
-                                                                  .fontColor,
-                                                            ),
-                                                            leading: const Icon(
-                                                                Icons.person)),
+                                                        child: Container(
+                                                          color: AppColors
+                                                              .primaryColor,
+                                                          child: ListTile(
+                                                              focusColor: AppColors
+                                                                  .primaryColor,
+                                                              onTap: () async {
+                                                                await AudioPlayer()
+                                                                    .play(
+                                                                  AssetSource(
+                                                                    'audio/beeb.mp3',
+                                                                  ),
+                                                                );
+                                                                // await AudioPlayer().stop();
+                                                                controller.addToCL(
+                                                                    controller
+                                                                            .custData[
+                                                                        index]);
+                                                                controller
+                                                                    .custData
+                                                                    .clear();
+                                                              },
+                                                              selectedTileColor:
+                                                                  AppColors
+                                                                      .seconrayColor,
+                                                              hoverColor: AppColors
+                                                                  .primaryColor,
+                                                              title: AppText(
+                                                                txt:
+                                                                    '${controller.custData[index].custName}       ${controller.custData[index].phone}',
+                                                                size:
+                                                                    Get.width *
+                                                                        0.03,
+                                                                fw: FontWeight
+                                                                    .w800,
+                                                                color: AppColors
+                                                                    .backgroundColor,
+                                                              ),
+                                                              leading: const Icon(
+                                                                  Icons
+                                                                      .person)),
+                                                        ),
                                                       );
                                                     },
                                                   ),
                                           ),
-                                          Container(
-                                            margin: EdgeInsets.only(
-                                                top: Get.width * 0.04),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
-                                              children: [
-                                                TxtFrmFeild.buildPayedTxtForm(
-                                                    cont: controller.payedCont,
-                                                    controller: controller),
-                                                TxtFrmFeild.buildrentTxtForm(
-                                                    controller:
-                                                        controller.rentCont)
-                                              ],
-                                            ),
-                                          )
                                         ],
                                       ))
                                     ],
@@ -210,7 +242,7 @@ class CreateInvoiceVeiw extends GetWidget<CreateInvoiceVeiwModel> {
                       children: [
                         AppText(
                           txt: '44'.tr,
-                          size: Get.width * 0.057,
+                          size: Get.width * 0.05,
                           fw: FontWeight.w700,
                           color: AppColors.fontColor,
                         ),

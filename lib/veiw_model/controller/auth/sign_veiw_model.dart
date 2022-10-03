@@ -32,7 +32,9 @@ class SignInCompanyVeiwModel extends GetxController {
             Get.snackbar('Ok', 'sucess Sign in');
             sharedpref!.remove('id');
             sharedpref!.remove('company');
+            sharedpref!.remove('salesId');
             sharedpref!.setString('company', value.docs[0]['companyName']);
+            sharedpref!.setString('salesId', value.docs[0]['id']);
             sharedpref!.setInt('id', value.docs[0]['companyId']);
             Get.off(() => const HomePageVeiw());
           } else {

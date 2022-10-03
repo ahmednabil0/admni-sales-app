@@ -43,6 +43,8 @@ class CreateCompanyVeiwModel extends GetxController {
       "id": i,
       "logo": '',
     });
+    sharedpref!.remove('id');
+    sharedpref!.remove('company');
     sharedpref!.setString('company', companyNameCont.text);
     sharedpref!.setInt('id', i);
   }

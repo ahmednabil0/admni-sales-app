@@ -189,6 +189,61 @@ class TxtFrmFeild {
                           double.parse(controller.payedCont.text))
                       .toStringAsFixed(2);
                 }
+                if (double.parse(controller.payedCont.text.trim()) >
+                    controller.total) {
+                  controller.payedCont.text = controller.total.toString();
+                  controller.rentCont.text = '0.00';
+                }
+                if (controller.payedCont.text.isEmpty) {
+                  controller.payedCont.text = '0.0';
+                  controller.rentCont.text = controller.total.toString();
+                }
+              },
+              keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                hintText: '30'.tr,
+                hintStyle: TextStyle(
+                  fontSize: Get.width * 0.04,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryColor.withOpacity(0.5),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static SizedBox buildvatTxtForm(
+      {required CreateInvoiceVeiwModel cont,
+      required TextEditingController controller}) {
+    return SizedBox(
+      width: Get.width * 0.35,
+      child: Column(
+        children: [
+          AppText(
+            txt: '31'.tr,
+            size: Get.width * 0.04,
+            fw: FontWeight.bold,
+            color: AppColors.primaryColor,
+          ),
+          SizedBox(
+            width: Get.width * 0.3,
+            height: Get.width * 0.08,
+            child: TextFormField(
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(
+                  RegExp(
+                    r'(^\d*\.?\d*)',
+                  ),
+                )
+              ],
+              controller: controller,
+              onChanged: (value) {
+                cont.calTotal();
               },
               keyboardType: TextInputType.number,
               textAlign: TextAlign.center,
