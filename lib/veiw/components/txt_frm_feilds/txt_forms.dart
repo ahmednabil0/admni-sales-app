@@ -158,14 +158,14 @@ class TxtFrmFeild {
     );
   }
 
-  static SizedBox buildQVatTxtForm(
+  static SizedBox buildPayedTxtForm(
       {required TextEditingController controller}) {
     return SizedBox(
       width: Get.width * 0.35,
       child: Column(
         children: [
           AppText(
-            txt: '31'.tr,
+            txt: '46'.tr,
             size: Get.width * 0.04,
             fw: FontWeight.bold,
             color: AppColors.primaryColor,
@@ -183,6 +183,49 @@ class TxtFrmFeild {
               ],
               controller: controller,
               keyboardType: TextInputType.number,
+              textAlign: TextAlign.center,
+              decoration: InputDecoration(
+                contentPadding: const EdgeInsets.symmetric(vertical: 0),
+                hintText: '30'.tr,
+                hintStyle: TextStyle(
+                  fontSize: Get.width * 0.04,
+                  fontWeight: FontWeight.w700,
+                  color: AppColors.primaryColor.withOpacity(0.5),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  static SizedBox buildrentTxtForm(
+      {required TextEditingController controller}) {
+    return SizedBox(
+      width: Get.width * 0.35,
+      child: Column(
+        children: [
+          AppText(
+            txt: '47'.tr,
+            size: Get.width * 0.04,
+            fw: FontWeight.bold,
+            color: AppColors.primaryColor,
+          ),
+          SizedBox(
+            width: Get.width * 0.3,
+            height: Get.width * 0.08,
+            child: TextFormField(
+              inputFormatters: [
+                FilteringTextInputFormatter.allow(
+                  RegExp(
+                    r'(^\d*\.?\d*)',
+                  ),
+                )
+              ],
+              controller: controller,
+              keyboardType: TextInputType.number,
+              readOnly: true,
               textAlign: TextAlign.center,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.symmetric(vertical: 0),

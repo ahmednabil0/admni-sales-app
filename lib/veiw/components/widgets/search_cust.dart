@@ -5,7 +5,8 @@ import 'package:get/get.dart';
 import '../../../veiw_model/controller/customers/customer_veiw_model.dart';
 import '../../helper/consts/colors.dart';
 
-GetBuilder<CustomerVeiwModel> buildSarchCustomer() {
+GetBuilder<CustomerVeiwModel> buildSarchCustomer(
+    TextEditingController textEditingController) {
   return GetBuilder<CustomerVeiwModel>(
     builder: (controller) => Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -129,6 +130,52 @@ GetBuilder<CreateInvoiceVeiwModel> buildSarchItems(TextEditingController txt) {
               Icons.manage_search_rounded,
               color: AppColors.backgroundColor,
             ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+GetBuilder<CreateInvoiceVeiwModel> buildSarchCustomersC(
+    TextEditingController txt) {
+  return GetBuilder<CreateInvoiceVeiwModel>(
+    builder: (controller) => Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Get.width * 0.2),
+              color: const Color(0xffF6F6F6)),
+          width: Get.width * 0.75,
+          child: TextFormField(
+            onChanged: (value) async {
+              await controller.fetchcustData(value.trim());
+            },
+            controller: txt,
+            decoration: InputDecoration(
+                fillColor: AppColors.seconrayColor.withOpacity(0.1),
+                filled: true,
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(
+                    color: Colors.transparent,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(Get.width * 0.1),
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.transparent),
+                    borderRadius:
+                        BorderRadius.all(Radius.circular(Get.width * 0.1))),
+                prefixIcon: const Icon(Icons.search_rounded),
+                prefixIconColor: AppColors.fontColor,
+                hintText: "42".tr,
+                hintStyle: TextStyle(
+                    fontSize: Get.width * 0.0332,
+                    color: AppColors.fontColor,
+                    fontWeight: FontWeight.w600,
+                    fontFamily: "Neo Sans Arabic Regular")),
           ),
         ),
       ],

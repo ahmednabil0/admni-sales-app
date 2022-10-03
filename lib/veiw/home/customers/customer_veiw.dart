@@ -26,7 +26,7 @@ class Customersveiw extends GetWidget<CustomerVeiwModel> {
               children: [
                 buildAppBar(txt: '76'.tr),
                 buildHeightSpace(0.02),
-                buildSarchCustomer(),
+                buildSarchCustomer(controller.queryCont),
                 Expanded(
                   child: Stack(
                     children: [
