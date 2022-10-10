@@ -23,7 +23,7 @@ class CreateUserVeiwModel extends GetxController {
 
   String? intailData;
   String? intailData2;
-  List<String> dataList2 = ['sales', 'manger (Disabled)', 'branshManger'];
+  List<String> dataList2 = ['sales', 'manger', 'branshManger'];
   oncganged(String? val) {
     intailData = val.toString();
     update();

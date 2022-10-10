@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:admin_new_app/veiw/home/home_veiw.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
@@ -47,6 +48,7 @@ class CreateCompanyVeiwModel extends GetxController {
     sharedpref!.remove('company');
     sharedpref!.setString('company', companyNameCont.text);
     sharedpref!.setInt('id', i);
+    Get.to (()=>const HomePageVeiw( ));
   }
 
   //end
